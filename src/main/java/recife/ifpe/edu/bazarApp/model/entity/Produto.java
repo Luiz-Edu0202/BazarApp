@@ -6,6 +6,7 @@ public class Produto {
     private int codigo;
     private String nome;
     private String descricao;
+    private int loteID;
 
     public int getCodigo() {
         return codigo;
@@ -29,5 +30,13 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public int getLoteID() {
+        return loteID;
+    }
+
+    public void setLoteID(int loteID) {
+        this.loteID = loteID;
     }
 }

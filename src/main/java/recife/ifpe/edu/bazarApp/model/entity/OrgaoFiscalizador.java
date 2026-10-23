@@ -31,4 +31,12 @@ public class OrgaoFiscalizador {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }
