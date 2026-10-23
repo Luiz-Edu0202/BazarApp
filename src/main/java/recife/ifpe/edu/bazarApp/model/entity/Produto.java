@@ -2,7 +2,6 @@ package recife.ifpe.edu.bazarApp.model.entity;
 
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
-@EntityScan
 public class Produto {
     private int codigo;
     private String nome;

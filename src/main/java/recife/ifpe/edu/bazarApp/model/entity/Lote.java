@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@EntityScan
+
 public class Lote {
     private int id;
     private Date dataEntrega;

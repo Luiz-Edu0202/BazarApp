@@ -3,9 +3,10 @@ package recife.ifpe.edu.bazarApp.model.entity;
 
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
-@EntityScan
+
 public class OrgaoDonatario {
     private int id;
+    private String senha;
     private String nome;
     private String endereco;
     private String telefone;
