@@ -3,12 +3,12 @@ package recife.ifpe.edu.bazarApp.model.entity;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
 public class OrgaoFiscalizador {
-    private int id;
+    private Integer id;
     private String senha;
     private String nome;
     private String descricao;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -20,7 +20,7 @@ public class OrgaoFiscalizador {
         return descricao;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -29,7 +29,7 @@
                     <div class="col-md-8 mb-3">
                         <label class="form-label">Órgão Donatário:</label>
                         <select class="form-select" th:field="*{orgaoDonatario.id}" required>
-                            <option value="">Selecione o órgão...</option>
+                            <option th:value="null">Selecione o órgão...</option>
                             <option th:each="orgao : ${orgaosDonatarios}"
                                     th:value="${orgao.id}"
                                     th:text="${orgao.nome}"></option>

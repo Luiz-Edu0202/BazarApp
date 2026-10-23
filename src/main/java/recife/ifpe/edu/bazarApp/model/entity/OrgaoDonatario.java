@@ -5,7 +5,7 @@ import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
 
 public class OrgaoDonatario {
-    private int id;
+    private Integer id;
     private String senha;
     private String nome;
     private String endereco;
@@ -14,7 +14,7 @@ public class OrgaoDonatario {
     private String descricao;
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class OrgaoDonatario {
         return descricao;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

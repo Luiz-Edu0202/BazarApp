@@ -1,6 +1,7 @@
 package recife.ifpe.edu.bazarApp.model.entity;
 
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,7 +9,8 @@ import java.util.List;
 
 
 public class Lote {
-    private int id;
+    private Integer id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataEntrega;
     private String observacao;
 
@@ -18,7 +20,7 @@ public class Lote {
 
     private List<Produto> produtos = new ArrayList<>();
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -30,7 +32,7 @@ public class Lote {
         return observacao;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -3,12 +3,12 @@ package recife.ifpe.edu.bazarApp.model.entity;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 
 public class Produto {
-    private int codigo;
+    private Integer codigo;
     private String nome;
     private String descricao;
-    private int loteID;
+    private Integer loteID;
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
@@ -20,7 +20,7 @@ public class Produto {
         return descricao;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
@@ -32,11 +32,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public int getLoteID() {
+    public Integer getLoteID() {
         return loteID;
     }
 
-    public void setLoteID(int loteID) {
+    public void setLoteID(Integer loteID) {
         this.loteID = loteID;
     }
 }
