@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Lote</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/fiscalizador/dashboard}">Voltar ao Painel</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class="mb-4">Cadastrar Novo Lote</h2>
+
+    <form th:action="@{/fiscalizador/lotes/salvar}" method="post" th:object="${lote}">
+
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white">Dados do Lote</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Data de Entrega:</label>
+                        <input type="date" class="form-control" th:field="*{dataEntrega}" required>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label">Órgão Donatário:</label>
+                        <select class="form-select" th:field="*{orgaoDonatario.id}" required>
+                            <option value="">Selecione o órgão...</option>
+                            <option th:each="orgao : ${orgaosDonatarios}"
+                                    th:value="${orgao.id}"
+                                    th:text="${orgao.nome}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Observação:</label>
+                    <textarea class="form-control" th:field="*{observacao}" rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow mb-4">
+            <div class="card-header bg-secondary text-white d-flex justify-content-between align-items-center">
+                <span>Produtos do Lote</span>
+                <button type="button" class="btn btn-sm btn-light" onclick="adicionarProduto()">+ Adicionar Produto</button>
+            </div>
+            <div class="card-body">
+                <div id="listaProdutos">
+                    <!-- Linha 0 (Inicial) -->
+                    <div class="row mb-2 produto-row">
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" th:field="*{produtos[0].nome}" placeholder="Nome do Produto" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" th:field="*{produtos[0].descricao}" placeholder="Descrição">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger w-100" onclick="removerProduto(this)">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-lg w-100 mb-5">Salvar Lote e Produtos</button>
+    </form>
+</div>
+
+<script>
+    let contador = 1;
+
+    function adicionarProduto() {
+        const lista = document.getElementById('listaProdutos');
+        const novaRow = document.createElement('div');
+        novaRow.className = 'row mb-2 produto-row';
+        novaRow.innerHTML = `
+            <div class="col-md-4">
+                <input type="text" class="form-control" name="produtos[${contador}].nome" placeholder="Nome do Produto" required>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="produtos[${contador}].descricao" placeholder="Descrição">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-danger w-100" onclick="removerProduto(this)">X</button>
+            </div>
+        `;
+        lista.appendChild(novaRow);
+        contador++;
+    }
+
+    function removerProduto(botao) {
+        const row = botao.closest('.produto-row');
+        row.remove();
+    }
+</script>
+
+</body>
+</html>
