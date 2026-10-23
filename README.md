@@ -46,7 +46,7 @@ O projeto segue o padrão de arquitetura em camadas:
 
 2. **Configure o Banco de Dados:**
     - Crie um banco de dados chamado `bazar_db` no seu MySQL.
-    - Execute o script SQL (disponível na pasta `src/main/resources/schema.sql` e `data.sql` ou no final deste documento) para criar as tabelas e popular os dados iniciais.
+    - Execute o script SQL (disponível na raiz do projeto se chamando `bazarBD.sql` ou no final deste documento) para criar as tabelas e popular os dados iniciais.
 
 3. **Variáveis de Ambiente:**
    O projeto espera as credenciais do banco via variáveis de ambiente. Na sua IDE (IntelliJ, Eclipse, etc), configure:
